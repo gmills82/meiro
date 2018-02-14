@@ -22,9 +22,18 @@ is a solution.
 
 ## Usage
 
-Project is pretty much complete and does not have functions exposed for
-external use (such as through a command-line executable JAR file). All the
-examples below assume that you are importing into a REPL for execution.
+The project uses [Leininger](https://leiningen.org/) as a build tool.
+- lein.sh install builds a jar file (not really useful with no main function)
+- lein.sh repl opens a command prompt
+    - (require '[meiro.core :as m])
+    - (require '[meiro.ascii :as ascii]) (loads the ascii renderer)
+    - (require '[meiro.png :as png]) (loads the png renderer)
+    - After this you need to load the type of maze generator you want
+    - (require '[meiro.sidewinder :as sw]) (loads the sidewinder maze algorithm)
+    - (print (ascii/render (sw/create (m/init 15 20)))) (prints an ascii rendering of a new sidewinder maze with 15 rows and 20 columns)
+
+The rest of the instructions below assume some level of familiarity with the clojure files in src. This project really
+needs some kind of CLI at the very least or possibly a way to use these clojure methods in another java project.
 
 
 ### Displaying Mazes

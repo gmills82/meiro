@@ -11,3 +11,5 @@ scratch.clj
 maze.png
 /template.txt
 tags
+*.iml
+.idea/*
